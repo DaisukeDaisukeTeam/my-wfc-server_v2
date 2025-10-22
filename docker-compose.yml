@@ -4,19 +4,24 @@ services:
     container_name: dnsmasq
     image: strm/dnsmasq
     restart: always
-    volumes:
-      - ./dnsmasq/wfc.conf:/etc/dnsmasq.d/wfc.conf
     ports:
       - "53:53/udp"
     cap_add:
       - NET_ADMIN
+      - NET_RAW
+    command: ["--address=/nintendowifi.net/${LOCAL_IP}"]
   pkmn-server:
     container_name: pkmn-server
     build:
       dockerfile: ./pkmn-server/Dockerfile
       args:
-        - ADMIN_USERNAME=admin
-        - ADMIN_PASSWORD=opensesame
+        - ADMIN_USERNAME=D4w2q3UuD8jNEa9QLm2BCHc5
+        - ADMIN_PASSWORD=@u4KgEfpsQx4KyCfYw3MjhQZ9
+    volumes:
+      - ./debug/packet_dump.py:/work1/packet_dump.py
+      - ./debug/pk:/work2/
+      - ./server/nas_server.py:/var/www/dwc_network_server_emulator/nas_server.py
+      - ./YDQJ:/var/www/dwc_network_server_emulator/dlc/YDQJ
     ports:
       - "80:80/tcp"
       - "443:443/tcp"

@@ -1,0 +1,5 @@
+# _list.txt をバイナリとして扱う
+_list.txt binary
+
+# すべての .bin ファイルをバイナリとして扱う
+*.bin binary
