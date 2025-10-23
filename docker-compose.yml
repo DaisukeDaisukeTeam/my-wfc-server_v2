@@ -21,6 +21,8 @@ services:
       - ./debug/packet_dump.py:/work1/packet_dump.py
       - ./debug/pk:/work2/
       - ./YDQJ:/var/www/dwc_network_server_emulator/dlc/YDQJ
+      - ./YDQE:/var/www/dwc_network_server_emulator/dlc/YDQE
+      - ./YDQP:/var/www/dwc_network_server_emulator/dlc/YDQP
     ports:
       - "80:80/tcp"
       - "443:443/tcp"
