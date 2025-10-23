@@ -18,8 +18,6 @@ services:
         - ADMIN_USERNAME=D4w2q3UuD8jNEa9QLm2BCHc5
         - ADMIN_PASSWORD=@u4KgEfpsQx4KyCfYw3MjhQZ9
     volumes:
-      - ./debug/packet_dump.py:/work1/packet_dump.py
-      - ./debug/pk:/work2/
       - ./YDQJ:/var/www/dwc_network_server_emulator/dlc/YDQJ
       - ./YDQE:/var/www/dwc_network_server_emulator/dlc/YDQE
       - ./YDQP:/var/www/dwc_network_server_emulator/dlc/YDQP
