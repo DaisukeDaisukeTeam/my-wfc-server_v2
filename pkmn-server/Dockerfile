@@ -239,15 +239,17 @@ RUN a2ensite *.nintendowifi.net.conf
 RUN apt update && apt install -y python3-pip libpcap-dev tcpdump && \
 pip install scapy
 
+RUN 
+
 #
 # Create entry point script
 #
-RUN echo "#!/bin/sh -eu\n\nservice mariadb start\napachectl start\ncd /var/www/dwc_network_server_emulator && python master_server.py" > /entrypoint.sh
+RUN echo "#!/bin/sh -eu\n\nservice mariadb start\napachectl start\ncd /var/www/dwc_network_server_emulator && git apply /var/www/dwc_network_server_emulator/dlc/YDQJ/patch.diff\ncd /var/www/dwc_network_server_emulator && python master_server.py" > /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 #
 # Remove packages
 #
-RUN apt purge -y apt-transport-https git lsb-release net-tools python3-software-properties software-properties-common vim
+RUN apt purge -y apt-transport-https lsb-release net-tools python3-software-properties software-properties-common vim
 RUN apt autoremove -y
 
 WORKDIR /var/www/dwc_network_server_emulator

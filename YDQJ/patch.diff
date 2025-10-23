@@ -1,0 +1,19 @@
+diff --git a/nas_server.py b/nas_server.py
+index cb963f0..da224ee 100644
+--- a/nas_server.py
++++ b/nas_server.py
+@@ -185,14 +185,6 @@ class NasHTTPServerHandler(BaseHTTPServer.BaseHTTPRequestHandler):
+                             "locator": "gamespy.com",
+                             "retry": "1",
+                         }
+-                    elif not self.server.db.allowed_games(post):
+-                        logger.log(logging.DEBUG, "Login denied - game not supported!"+str(post))
+-                        ret = {
+-                            "datetime": time.strftime("%Y%m%d%H%M%S"),
+-                            "returncd": "3800",
+-                            "locator": "gamespy.com",
+-                            "retry": "1",
+-                        }
+                     elif not self.server.db.valid_mac(post):
+                         logger.log(logging.DEBUG, "Login denied because MAC is not a valid length"+str(post))
+                         ret = {

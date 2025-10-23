@@ -20,7 +20,6 @@ services:
     volumes:
       - ./debug/packet_dump.py:/work1/packet_dump.py
       - ./debug/pk:/work2/
-      - ./server/nas_server.py:/var/www/dwc_network_server_emulator/nas_server.py
       - ./YDQJ:/var/www/dwc_network_server_emulator/dlc/YDQJ
     ports:
       - "80:80/tcp"
