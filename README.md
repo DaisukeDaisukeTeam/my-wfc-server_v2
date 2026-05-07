@@ -1,5 +1,13 @@
 # pkmn-wfc-server
 
+> [!WARNING]
+> This repository has been superseded by the standalone executable dq9_micro_dwc_server_emulator.cpp.  
+> This includes improved security, easier startup, and more.  
+> This fork is no longer maintained and has been abandoned.  
+> https://github.com/DaisukeDaisuke/dq9_micro_dwc_server_emulator.cpp  
+
+
+
 Docker image based on [CoWFC](https://github.com/EnergyCube/CoWFC) & [Poké Classic Framework](https://github.com/mm201/pkmn-classic-framework).
 
 **Only tested on Battle Tower (Gen4)** and **Mystery Gifts are disabled** by default.
